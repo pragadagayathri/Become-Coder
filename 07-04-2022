@@ -1,0 +1,135 @@
+RECURSION
+
+//nbasic problem on recursion to print a name for n times
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int n){
+    if(n==0){
+        return;
+    }
+    cout<<"print\n";
+    print(n-1);
+}
+int main(){
+    print(5);
+}
+
+output:
+
+print
+print
+print
+print
+print
+
+//fact program
+
+#include<bits/stdc++.h>
+using namespace std;
+int print(int n){
+    int fact=1;
+    if(n==0 || n==1){
+        return fact;
+    }
+    fact=n*print(n-1);
+}
+int main(){
+    cout<<print(5);
+}
+
+//printing numbers from 1 to n
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int x,int n){
+    if(x>n)return;
+    cout<<x<<"\n";
+    print(x+1,n);
+}
+int main(){
+    int n;
+    cin>>n;
+    print(1,n);
+}
+
+//printing numbers from n to 1
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int x,int n){
+    if(n<x)return;
+    cout<<n<<"\n";
+    print(x,n-1);
+}
+int main(){
+    int n;
+    cin>>n;
+    print(1,n);
+}
+
+//printing 1-n back tracking
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int x){
+    if(x==0)return;
+    print(x-1);
+    cout<<x<<"\n";
+}
+int main(){
+    int n;
+    cin>>n;
+    print(n);
+}
+
+//printing n to 1 back tracking
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int x,int n){
+    if(x==n+1)return;
+    print(x+1,n);
+    cout<<x<<"\n";
+}
+int main(){
+    int n;
+    cin>>n;
+    print(1,n);
+}
+
+//sum of digits using recursion
+
+#include<bits/stdc++.h>
+using namespace std;
+int s=0;
+int sum(int n){
+    if(n==0){
+        return s;
+    }
+    s=s+n%10;
+    n=n/10;
+    sum(n);
+}
+int main(){
+    int n;
+    cin>>n;
+    cout<<sum(n);
+}
+
+//another model
+
+#include<bits/stdc++.h>
+using namespace std;
+int sum(int n){
+    if(n==0){
+        return n;
+    }
+    return n%10+sum(n/10);
+}
+int main(){
+    int n;
+    cin>>n;
+    cout<<sum(n);
+}
